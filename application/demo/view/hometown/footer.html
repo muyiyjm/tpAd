@@ -1,0 +1,31 @@
+<div class="weui-tabbar">
+
+    {switch name="action_name" }
+    {case value="index"} <a href="{:url('hometown/index')}" class="weui-tabbar__item  weui-bar__item--on ">{/case}
+    {default /} <a href="{:url('hometown/index')}" class="weui-tabbar__item">
+    {/switch}
+        <p class="weui-tabbar__label c-ff">首页</p>
+    </a>
+    {switch name="action_name" }
+        {case value="rank"} <a href="{:url('hometown/rank')}" class="weui-tabbar__item  weui-bar__item--on ">{/case}
+        {default /} <a href="{:url('hometown/rank')}" class="weui-tabbar__item">
+    {/switch}
+        <p class="weui-tabbar__label c-ff">排行</p>
+    </a>
+        {switch name="action_name" }
+        {case value="reg"} <a href="{:url('hometown/reg')}" class="weui-tabbar__item  weui-bar__item--on ">{/case}
+            {default /} <a href="{:url('hometown/reg')}" class="weui-tabbar__item">
+                {/switch}
+
+        <p class="weui-tabbar__label c-ff">报名</p>
+    </a>
+
+            {switch name="action_name" }
+            {case value="prize"} <a href="{:url('hometown/prize')}" class="weui-tabbar__item  weui-bar__item--on ">{/case}
+                {default /} <a href="{:url('hometown/prize')}" class="weui-tabbar__item">
+                    {/switch}
+
+
+        <p class="weui-tabbar__label c-ff">奖品</p>
+    </a>
+</div>

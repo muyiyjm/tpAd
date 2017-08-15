@@ -1,0 +1,55 @@
+{include file="hometown/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="hometown/footer" title="index" keywords="开源WEB开发框架" /}
+<header >
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"> <img src="/static/jpt/goddess/img/banner-1@2x.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script>
+        $(".swiper-container").swiper({
+            loop: false,
+            autoplay: 3000
+        });
+    </script>
+</header>
+
+<div class="hometown-panel_rank weui-panel weui-panel_access">
+    <div class="weui-panel__bd">
+
+
+
+
+        {volist name="list" id="vo"  key="k"}
+
+
+
+
+
+        <a href="{:url('hometown/show', ['id' => $vo['id']])}" class="hometown-rank_item weui-media-box weui-media-box_appmsg">
+            <div class="rank-item_ranknum">{$k}</div>
+            <div class="rank-item_hd weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="{$vo.cover}">
+            </div>
+            <div class="rank-item_bd weui-media-box__bd">
+                <label class="weui-media-box__title">XX地区</label>
+                <p class=" weui-media-box__desc">
+                    编号:<span>{$vo.id}</span>
+                    票数:<span>{$vo.votes}</span>
+                </p>
+
+            </div>
+        </a>
+        {/volist}
+    </div>
+</div>
+
+
+
+
+
+<div class="weui-tabbar_space"></div>
+</body>
+</html>

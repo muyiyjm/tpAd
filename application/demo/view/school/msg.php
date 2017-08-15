@@ -1,0 +1,45 @@
+<html>
+<?php include("header.html"); ?>
+
+
+<body>
+<?php include('footer.html'); ?>
+
+
+
+
+
+
+<style>
+
+    .Landlady-msg{
+        background-color: transparent;
+    }
+
+    .Landlady-msg .Landlady-msg_textarea .weui-cell__bd{
+        border: 1px solid #32b16c;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+
+
+</style>
+<div class="report jpt-preview">
+    <div class="jpt-preview_title">本校毕业年级聊天室</div>
+    <form class="Landlady-msg weui-cells weui-cells_form bor-all-clear">
+        <div class="weui-cell Landlady-msg_textarea">
+            <div class="weui-cell__bd">
+                <textarea class="weui-textarea" placeholder="" rows="8"></textarea>
+
+            </div>
+        </div>
+
+
+        <button class="weui-btn  bth-vote mt-15">提交</button>
+
+    </form>
+
+
+
+</div>

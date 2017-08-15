@@ -1,0 +1,74 @@
+
+
+
+<div id="divcc" class="home-foot_dio">
+    <ul>
+        <li class="foot_dio-nav"> <a href="{:url('shangmb/index')}" class="dio_a">
+          口碑排行
+        </a></li>
+        <li  class="foot_dio-nav"> <a href="{:url('shangmb/index')}" class="dio_a">
+          人气排行
+        </a></li>
+    </ul>
+
+</div>
+<style>
+.home-foot_dio{
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    left: 2vw;
+    text-align: center;
+    padding: 10px 5px;
+    color: #fff;
+    width: 18vw;
+    z-index: 1000;
+    background-color: #a129fa;
+border-radius: 8px;
+    line-height: 2;
+}
+.foot_dio-nav+.foot_dio-nav:before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 2px;
+    border-top: 2px solid #fff;
+    color: #fff;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+    .dio_a{
+        color: #fff;
+    }
+</style>
+<script>
+function dioc() {
+    $("#divcc").toggle();
+}
+</script>
+
+
+
+
+
+
+
+
+<div class="weui-tabbar">
+    <a href="javascript:dioc();" class="weui-tabbar__item  weui-bar__item--on">
+        <p class="weui-tabbar__label c-ff">排行</p>
+    </a>
+    <a href="{:url('shangmb/reg')}" class="weui-tabbar__item" >
+        <p class="weui-tabbar__label c-ff">报名</p>
+    </a>
+    <a href="{:url('shangmb/prize')}" class="weui-tabbar__item ">
+        <p class="weui-tabbar__label c-ff">活动奖品</p>
+    </a>
+    <a href="{:url('shangmb/explain')}" class="weui-tabbar__item ">
+        <p class="weui-tabbar__label c-ff">活动说明</p>
+    </a>
+</div>

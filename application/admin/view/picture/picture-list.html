@@ -1,0 +1,203 @@
+﻿
+{extend name="Layout:item" /}
+{block name="itemcss"}{/block}
+{block name="title"}图片列表{/block}
+
+
+{block name="main"}
+<style>
+	img{
+		width:100%;
+	}
+</style>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c"> 日期范围：
+		<input type="text"  placeholder="开始日" onclick="laydate()" id="logmin" class="input-text Wdate" style="width:120px;">
+		-
+		<input type="text"  placeholder="截止日" onclick="laydate()" id="logmax" class="input-text Wdate" style="width:120px;">
+		<input type="text" name="" id="" placeholder=" 图片名称" style="width:250px" class="input-text">
+		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜图片</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','picture-add.html')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加图片</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+	<div class="mt-20">
+		<table  class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="40">
+						<input name="" type="checkbox" value="">
+					</th>
+					<th width="80">ID</th>
+					<th width="100">分类</th>
+					<th width="100">封面</th>
+					<th width="100">图片链接</th>
+					<th width="150">Tags</th>
+					<th width="150">更新时间</th>
+					<th width="60">发布状态</th>
+					<th width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody class="text-c">
+
+
+
+
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+{/block}
+{block name="mainJS"}
+
+<!--请在下方写此页面业务相关的脚本-->
+{load href="/static/lib/laydate/laydate.js" /}
+{load href="/static/lib/datatables/1.10.15/js/jquery.dataTables.min.js" /}
+{load href="/static/lib/laypage/1.2/laypage.js" /}
+
+<script type="text/javascript">
+
+var pict=$('.table-sort').dataTable({
+    "oLanguage": {
+        "sLengthMenu": "每页显示 _MENU_ 条记录",
+        "sZeroRecords": "对不起，查询不到任何相关数据",
+        "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_条记录",
+        "sInfoEmtpy": "找不到相关数据",
+        "sInfoFiltered": "数据表中共为 _MAX_ 条记录)",
+        "sProcessing": "正在加载中...",
+        "sSearch": "搜索",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sPrevious":" 上一页 ",
+            "sNext": " 下一页 ",
+            "sLast": " 最后一页 "
+        },
+    },
+    ajax: {
+        url: 'listdata',
+        dataSrc: ''
+    },
+    columns: [
+        {
+            "data": null ,//此列不绑定数据源，用来显示序号
+            "render": function ( data, type, full, meta ) {
+                return '<input name="" type="checkbox" value="">';
+            }
+        },
+        { data: 'id' },
+
+		{ data: 'bid'},
+        { data: 'picurl',
+            "render": function ( data, type, full, meta ) {
+                return '<a href="'+data+'"><img src="'+data+'"/></a>';
+            }},
+        {data: 'picurl'},
+        { data: 'bid'},
+        { data: 'create_time'},
+        { data: 'id' },
+
+        { data: 'bid'},
+    ],
+    columnDefs: [
+
+	]
+
+});
+
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-查看*/
+function picture_show(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-审核*/
+function picture_shenhe(obj,id){
+	layer.confirm('审核文章？', {
+		btn: ['通过','不通过'], 
+		shade: false
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布', {icon:6,time:1000});
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
+		$(obj).remove();
+    	layer.msg('未通过', {icon:5,time:1000});
+	});	
+}
+
+/*图片-下架*/
+function picture_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+		$(obj).remove();
+		layer.msg('已下架!',{icon: 5,time:1000});
+	});
+}
+
+/*图片-发布*/
+function picture_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
+
+/*图片-申请上线*/
+function picture_shenqing(obj,id){
+	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
+	$(obj).parents("tr").find(".td-manage").html("");
+	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
+}
+
+/*图片-编辑*/
+function picture_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-删除*/
+function picture_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '',
+			dataType: 'json',
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});		
+	});
+}
+</script>
+{/block}

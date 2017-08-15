@@ -1,0 +1,21 @@
+<div class="header layui-header ">
+    <div class="main">
+        <ul class="layui-nav" lay-filter="top-nav">
+            <li class="layui-nav-item layui-this" title="home"><a href="">首页</a></li>
+            <li class="layui-nav-item "><a href="{:url('index/article/index')}">我的文章</a></li>
+            <li class="layui-nav-item">
+                <a href="{:url('index/pro/index')}">作品展示</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="{:url('/index/index')}">微站模版</a></dd>
+                    <dd><a href="">后台模版</a></dd>
+                    <dd><a href="">PHP站点</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">大数据</a></li>
+
+            <li class="layui-nav-item"><a href="{:url('admin/index/index')}">后台临时链接</a></li>
+        </ul>
+        <div class="title">易腾博客</div>
+    </div>
+</div>
+<div class="header_space"></div>

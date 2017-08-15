@@ -1,0 +1,35 @@
+{block name="meta"}{include file="public/meta" /}{/block}
+
+<title>{block name="title"}标题{/block}</title>
+<meta name="keywords" content="123">
+<meta name="description" content="321。">
+</head>
+<body>
+
+
+{block name="main"}主内容{/block}
+
+
+
+{block name="footer"}{include file="public/footer" /}{/block}
+
+{block name="mainJS"}此页面业务相关的脚本{/block}
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+
+<!--此乃百度统计代码，请自行删除-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--/此乃百度统计代码，请自行删除-->
+</body>
+</html>

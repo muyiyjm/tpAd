@@ -1,0 +1,54 @@
+{include file="goddess/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="goddess/footer" title="index" keywords="开源WEB开发框架" /}
+
+
+<div class="header-space"></div>
+<div class="goddess-gift_cover">
+    <img class="portrait" src="/static/jpt/goddess/img/pic-small@2x.png">
+
+</div>
+
+<form class="goddess-gift_form weui-cells weui-cells_form bor-all-clear" action="" method="post" oninput="total.value=parseInt(giftnum.value)*parseInt(s.value)">
+
+    <div class="weui-cell goddess-gift_cell">
+        <div class="weui-cell__hd">
+         <img src="/static/jpt/goddess/img/flowers@2x.png">
+        </div>
+        <div class="weui-cell__bd">
+            <span id="price_item_1">￥2.00元</span>
+        </div>
+        <div class="weui-cell__fd add_chose">
+                <a class="reduce" onClick="setAmount.reduce('#qty_item_1')" href="javascript:void(0)">
+                    -</a>
+                <input type="text" name="qty_item_1" value="1" id="qty_item_1" onKeyUp="setAmount.modify('#qty_item_1')" class="text" style="text-align:center;" />
+                <a class="add" onClick="setAmount.add('#qty_item_1')" href="javascript:void(0)">
+                    +</a>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="goddess-gift_form-tagger weui-flex">
+        <div class="weui-flex__item goddess-gift_total">
+            总价：<span class="total-font" id="total_item_1">￥89.00</span>
+            <input type="hidden" name="total_price" id="total_price" value="" />
+            <!--<span class="jifen">购买商品可获得：<b id="total_points">18</b>积分</span>-->
+        </div>
+
+        <div class="goddess-gift_sub">
+            <button class="weui-btn bth-gift_sub">确认</button>
+        </div>
+    </div>
+
+</form>
+<div class="weui-tabbar_space"></div>
+
+
+<div class="weui-tabbar_space"></div>
+
+</body>
+</html>

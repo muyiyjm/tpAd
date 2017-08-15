@@ -1,0 +1,110 @@
+{include file="goddess/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="goddess/footer" title="index" keywords="开源WEB开发框架" /}
+<header >
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"> <img src="/static/jpt/goddess/img/banner-1@2x.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</header>
+
+<div class="weui-flex goddess-count">
+    <div class="weui-flex__item">
+        <label class="">已报名</label>
+        <p>1</p>
+    </div>
+    <div class="weui-flex__item">
+        <label class="">投票人次</label>
+        <p>1</p>
+    </div>
+    <div class="weui-flex__item">
+        <label class="">访问量</label>
+        <p>1</p>
+    </div>
+</div>
+
+
+<style>
+    .goddess-count{
+        color:#fc9712;padding:10px 0;
+        text-align: center;
+    }
+    .goddess-notice:before{
+        border-color: #fc9712;
+        color: #fc9712;
+        left:0;
+    }
+</style>
+
+
+<div class="notice goddess-notice weui-cell ">
+    <div class="notice-hd weui-cell__hd">
+        <label class=" weui-label">&nbsp; </label>
+    </div>
+    <div class="dowebok notice-bd  weui-cell__bd">
+        <p >16级12班王雪报道</p>
+    </div>
+</div>
+
+
+<div class=" goddess-pieview_bd  goddess-column">
+
+
+    <a class=" goddess-column_item">
+        <div class="column-item_bd">
+            <img src="/static/jpt/goddess/img/pic-small@2x.png">
+            <p class="goddess-grid_desc goddess-grid_num">编号：<span>1号</span></p>
+            <p class="goddess-grid_desc goddess-grid_name">姓名：<span>刘亦菲</span></p>
+            <p class="goddess-grid_desc goddess-grid_vote">票数：<span>123</span></p>
+        </div>
+    </a>
+
+    <a class=" goddess-column_item">
+        <div class="column-item_bd">
+            <img src="/static/jpt/landlady/img/pic-goods-1@2x.png">
+            <p class="goddess-grid_desc goddess-grid_num">编号：<span>1号</span></p>
+            <p class="goddess-grid_desc goddess-grid_name">姓名：<span>刘亦菲</span></p>
+            <p class="goddess-grid_desc goddess-grid_vote">票数：<span>123</span></p>
+        </div>
+    </a>
+
+    <a class=" goddess-column_item">
+        <div class="column-item_bd">
+            <img src="/static/jpt/landlady/img/pic-goods-1@2x.png">
+            <p class="goddess-grid_desc goddess-grid_num">编号：<span>1号</span></p>
+            <p class="goddess-grid_desc goddess-grid_name">姓名：<span>刘亦菲</span></p>
+            <p class="goddess-grid_desc goddess-grid_vote">票数：<span>123</span></p>
+        </div>
+    </a>
+
+
+    <a class=" goddess-column_item">
+        <div class="column-item_bd">
+            <img src="/static/jpt/goddess/img/pic-small@2x.png">
+            <p class="goddess-grid_desc goddess-grid_num">编号：<span>1号</span></p>
+            <p class="goddess-grid_desc goddess-grid_name">姓名：<span>刘亦菲</span></p>
+            <p class="goddess-grid_desc goddess-grid_vote">票数：<span>123</span></p>
+        </div>
+    </a>
+</div>
+
+<div class="weui-tabbar_space"></div>
+<script>
+    $(".swiper-container").swiper({
+        loop: false,
+        autoplay: 3000
+    });
+
+
+
+    $(function(){
+        $('.dowebok').liMarquee();
+    });
+
+
+</script>
+
+</body>
+</html>

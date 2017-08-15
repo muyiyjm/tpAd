@@ -1,0 +1,136 @@
+
+{include file="school/head" /}
+<body>
+{include file="school/footer" /}
+<div class="page bg_rank">
+    <header class="jpt-header_1">
+
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/static/jpt/school/img/banner.png"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <script>
+                $(".swiper-container").swiper({
+                    loop: false,
+                    autoplay: 3000
+                });
+            </script>
+        </div>
+
+
+        <div class="jpt-Search_bar weui-flex">
+            <div class="Count-down">
+                <label>距活动结束还有：</label>
+                <ul class="Count-down_body">
+                    <li> <span id="day" class="days">00</span>天</li>
+                    <li> <span id="hour" class="hours">00</span>时 </li>
+                    <li> <span id="mini"  class="minutes">00</span>分 </li>
+                    <li> <span id="sec"  class="seconds">00</span>秒 </li>
+                    <!--            <li> <span id="hm"  class="seconds">00 </span>毫秒</li>-->
+                </ul>
+            </div>
+            <div class=" jpt-Search weui-flex__item">
+                &nbsp<input placeholder="搜索母校" type="search" class="jpt-Search_input">
+                <div class="jpt-icon_search" >
+                    <img src="/static/jpt/school/img/find1@2x.png">
+                </div>
+            </div>
+        </div>
+
+
+
+    </header>
+
+
+
+    <div class="jpt-rank weui-panel weui-panel_access">
+        <div class="weui-panel__bd jpt-rank_bd">
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/jpt/school/img/home-pic-1@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">山东大学</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        报道人数：<span>1200</span>
+                        投票量：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/jpt/school/img/home-pic-1@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">山东大学</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        报道人数：<span>1200</span>
+                        投票量：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/jpt/school/img/home-pic-1@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">山东大学</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        报道人数：<span>1200</span>
+                        投票量：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/jpt/school/img/home-pic-1@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title school-name">山东大学</h4>
+                    <p class="weui-media-box__desc school_desc">
+                        报道人数：<span>1200</span>
+                        投票量：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottem">
+
+    </div>
+
+
+
+</div>
+<script>
+    var zxx = {
+        obj: function(){
+            return {
+                hm: $("#hm"),
+                sec: $("#sec"),
+                mini: $("#mini"),
+                hour: $("#hour"),
+                day: $("#day"),
+                month: $("#month"),
+                year: $("#year")
+            }
+        }
+    };
+    fnTimeCountDown(1527982400000, zxx.obj());
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+{include file="grouda/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="grouda/footer" title="index" keywords="开源WEB开发框架" /}
+<header >
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"> <img src="/static/jpt/shang/img/banner3@2x.png"></div>
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+    </div>
+    <script>
+        $(".swiper-container").swiper({
+            loop: false,
+            autoplay: 3000
+        });
+    </script>
+</header>
+<div class="notice jpt-notice weui-cell ">
+    <div class="notice-hd weui-cell__hd">
+        <label class=" weui-label">&nbsp; </label>
+    </div>
+    <div class="dowebok notice-bd  weui-cell__bd">
+        <p >16级12班王雪报道</p>
+    </div>
+    <script>
+        $(function(){
+            $('.dowebok').liMarquee();
+        });
+    </script>
+</div>
+
+<div class="weui-flex jpt-count">
+    <div class="weui-flex__item">
+        <label class="">已报名</label>
+        <p>1</p>
+    </div>
+    <div class="weui-flex__item">
+        <label class="">投票人次</label>
+        <p>1</p>
+    </div>
+    <div class="weui-flex__item">
+        <label class="">访问量</label>
+        <p>1</p>
+    </div>
+</div>
+
+<div class="jpt-Search_box jpt-Search_bar weui-flex">
+    <div class="Count-down">
+        <label>距活动结束还有：</label>
+        <ul class="Count-down_body">
+            <li> <span id="day" class="days">00</span>天</li>
+            <li> <span id="hour" class="hours">00</span>时 </li>
+            <li> <span id="mini"  class="minutes">00</span>分 </li>
+            <li> <span id="sec"  class="seconds">00</span>秒 </li>
+            <!--            <li> <span id="hm"  class="seconds">00 </span>毫秒</li>-->
+        </ul>
+        <script>
+            //    倒计时
+            var zxx = {
+                obj: function(){
+                    return {
+                        hm: $("#hm"),
+                        sec: $("#sec"),
+                        mini: $("#mini"),
+                        hour: $("#hour"),
+                        day: $("#day"),
+                        month: $("#month"),
+                        year: $("#year")
+                    }
+                }
+            };
+            fnTimeCountDown(1527982400000, zxx.obj());
+            //        倒计时 end
+        </script>
+    </div>
+
+
+    <form class=" jpt-Search weui-flex__item">
+        &nbsp<input placeholder="搜索商家" type="search" class="jpt-Search_input">
+
+        <div class="jpt-icon_search" >
+            <input type="submit" class="jpt-Search_sub">
+            <!--<img src="/static/jpt/landlady/img/find1@2x.png">-->
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="weui-tabbar_space"></div>
+
+
+</body>
+</html>

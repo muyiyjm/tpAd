@@ -1,0 +1,106 @@
+{include file="mengbao/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="mengbao/footer" title="index" keywords="开源WEB开发框架" /}
+
+
+
+
+
+<div class="hometown-show_header">
+    <div class="show-header_box">
+        <!--<div class="show-header_hd">-->
+            <!--第一名-->
+        <!--</div>-->
+        <div class="show-header_bd">
+            <img src="{$show.cover}">
+
+<div class="show-header_desc">
+    <p class="">编号：<span>12号</span></p>
+    <p class="">姓名：<span>第三方</span></p>
+    <p class="">票数：<span>12票</span></p>
+</div>
+
+
+            <a  class="weui-btn bth-2 mt">为他投票</a>
+            <a  class="weui-btn bth-2">生成拉票海报</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="hometown-album">
+
+
+    <!--<div class="hometown-album_item">-->
+    <!--<img src="/static/jpt/hometown/img/pic-2@2x.png">-->
+    <!--</div>-->
+
+    {volist name="pics" id="pic"}
+    <div class="hometown-album_item">
+        <img src="{$pic.picurl}">
+    </div>
+    {/volist}
+
+
+
+</div>
+
+
+
+<div class="hometown-msgs">
+    <div class="mengbao-title">留言</div>
+    <div class="hometown-msgs_bd">
+
+        <div class="hometown-msg_item">
+            <div class="msg-item_hd weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="/static/jpt/landlady/img/pic-child-1@2x.png">
+                </div>
+                <div class="weui-cell__bd">
+                    皮卡的小秋裤
+                </div>
+            </div>
+            <div class="msg-item_bd">
+                商品适量非常号，商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号
+            </div>
+        </div>
+
+        <div class="hometown-msg_item">
+            <div class="msg-item_hd weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="/static/jpt/landlady/img/pic-child-1@2x.png">
+                </div>
+                <div class="weui-cell__bd">
+                    皮卡的小秋裤
+                </div>
+            </div>
+            <div class="msg-item_bd">
+                商品适量非常号，商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号商品适量非常号
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="weui-cell weui-cell_link bor-all-clear">
+            <div class="weui-cell__bd ta-c">查看更多...</div>
+        </a>
+    </div>
+
+
+
+</div>
+
+<div class="hometown-adv">
+
+    <div class="hometown-adv_item">
+        <img src="/static/jpt/mengbao/img/pic-bottom@2x.png">
+    </div>
+
+
+
+</div>
+
+
+
+
+<div class="weui-tabbar_space"></div>
+
+</body>
+</html>

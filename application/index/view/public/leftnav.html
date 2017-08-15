@@ -1,0 +1,35 @@
+
+<div class="layui-side layui-bg-black left_nav trans_2">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="left_nav">
+            <li class="layui-nav-item home"><a href="/">首页</a></li>
+            <li class="layui-nav-item">
+                <a href="{:url('index/article/index')}">我的文章</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="#">杂谈</a></dd>
+                    <dd><a href="#">PHP</a></dd>
+                    <dd><a href="#">建站</a></dd>
+                    <dd><a href="#">WEB前端</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="{:url('index/pro/index')}">我的作品</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="javascript:">源码分享</a></dd>
+                    <dd><a href="javascript:">jQuery特效</a></dd>
+                </dl>
+            </li>
+
+            <li class="layui-nav-item">
+                <a href="javascript:;">关于</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="#">关于老张</a></dd>
+
+                    <dd><a href="http://www.phplaozhang.com/feedback.html">留言</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="left_nav_mask"></div>
+<div class="left_nav_btn"><i class="layui-icon">&#xe602;</i></div>

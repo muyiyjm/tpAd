@@ -1,0 +1,118 @@
+{include file="public/meta" /}
+<title>开始使用Layui</title>
+</head>
+<body>
+
+{include file="public/topnav" /}
+<!-- 左边导航 开始 -->
+{include file="public/leftnav" /}
+<!-- 左边导航 结束 -->
+<!-- 面包屑导航 开始 -->
+<div class="main breadcrumb_nav trans_3">
+	<span class="layui-breadcrumb" lay-separator="—" style="visibility: visible;">
+	  <a href="{:url('index/index/index')}">首页<span class="layui-box">—</span></a><a href="{:url('index/pro/index')}">我的作品</a>	</span>
+</div>
+<!-- 面包屑导航 结束 -->
+
+<div class="main">
+    <div class="picture_list_container">
+        <ul>
+            {volist name="demolist" id="vo"}
+
+
+            <li class="trans_3">
+                <a href="#" class="pic"><img class="lazy" data-original="{$vo.thumbnail}" src="{$vo.thumbnail}" alt="demo缩略图" style="display: inline-block;"></a>
+                <h2 class="title"><a href="/download/1.html"><span class="top">置顶</span>{$vo.name}</a></h2>
+                <p class="desc"> {$vo.desc}</p>
+                <div class="date_hits">
+                    <p class="date"><span> {$vo.update_time}</span></p>
+                    <span class="hits"><i class="layui-icon" title="点击量"></i> 3043 ℃</span>
+                    <a href=" {$vo.downloadurl}" target="_blank" class="layui-btn layui-btn-primary">下载</a>
+                    <a href=" {:url($vo.demourl)}" target="_blank" class="layui-btn layui-btn-primary demo_btn">演示</a>
+                </div>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+
+
+<div id="page" style="min-height: 10px;"></div>
+{include file="public/totop" /}
+{include file="public/footer" /}
+
+
+
+
+<script>
+
+
+
+    layui.use(['form','element'], function(){
+        var layer = layui.layer,
+            form = layui.form(),
+            element = layui.element(),
+            $ = layui.jquery;
+
+//        //判断是否是本站域名
+//        host = window.location.host;
+//        if(!(host == 'phplaozhang.com' || host == 'www.phplaozhang.com')){
+//            layer.msg('此域名不是本站域名，请谨慎访问！！！', {icon: 7,shade: 0.8,time: 99999999});
+//        }
+
+        //左边导航点击显示
+        $('.left_nav_btn').click(function(){
+            $('.left_nav_mask').show();
+            $('.left_nav').addClass('left_nav_show');
+        });
+        //左边导航点击消失
+        $('.left_nav_mask').click(function(){
+            $('.left_nav').removeClass('left_nav_show');
+            $('.left_nav_mask').hide();
+        });
+
+        //搜索框特效
+        $('.header .head_search .search_input').focus(function(){
+            $('.header .head_search').addClass('focus');
+            $(this).attr('placeholder','输入关键词搜索');
+        });
+        /*$(document).click(function(){
+            $('.header .head_search').removeClass('focus');
+            $('.header .head_search .search_input').attr('placeholder','搜索');
+        });
+        $('.header .head_search').click(function(e){
+            $(this).addClass('focus');
+            e.stopPropagation();
+        });*/
+        $('.header .head_search .close').click(function(){
+            $('.header .head_search').removeClass('focus');
+            $('.header .head_search .search_input').attr('placeholder','搜索');
+        });
+
+
+        //回到顶部
+        $("#to_top").click(function() {
+            $("html,body").animate({scrollTop:0}, 200);
+        });
+        $(document).scroll(function(){
+            var	scroll_top = $(document).scrollTop();
+            if(scroll_top > 500){
+                $("#to_top").show();
+            }else{
+                $("#to_top").hide();
+            }
+        });
+        //底部版权始终在底部
+        /*var win_height = $(window).height();
+        var body_height = $('body').height();
+        var footer_height = $('.footer').height();
+        if(body_height - win_height < 0){
+            $('.footer').addClass('footer_fixed');
+        } */
+    });
+
+
+</script>
+
+</body>
+</html>

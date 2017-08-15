@@ -1,0 +1,90 @@
+{include file="Mblog/head" /}
+<body>
+{include file="Mblog/footer" /}
+<div class="mask" id="mask"></div>
+
+<div id="bjbox" class="dialog">
+<div  class="bj-popup">
+<button onclick="bjclose()" class="bj-close">&nbsp;</button>
+    <div class="bj-popup_bd">
+        <a href="" class="bj-item" >大saf一班</a>
+        <a href="" class="bj-item" >大ewtgwqewqe一班</a>
+        <a href="" class="bj-item" >大csa一班</a>
+        <a href="" class="bj-item" >一班</a>
+
+        <a href="" class="bj-item" >大saf一班</a>
+
+        <a href="" class="bj-item" >大ewtgf一班</a>
+        <a href="" class="bj-item" >大c班</a>
+        <a href="" class="bj-item" >大一班</a></div>
+
+
+</div>
+</div>
+<header class="header-index_v">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"> <img src="/static/jpt/landlady/img/banner1@2x.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script>
+        $(".swiper-container").swiper({
+            loop: false,
+            autoplay: 3000
+        });
+    </script>
+    <div class="weui-flex ta-c" >
+        <div class="weui-flex__item jpt-select_group">
+            <button id="bj" class="weui-btn select">&nbsp;班级</button>
+        </div>
+        <div class="weui-flex__item jpt-select_group">
+            <div class=" jpt-Search">
+                &nbsp;<input placeholder="搜索姓名或编号" type="search" class="jpt-Search_input">
+                <div class="jpt-icon_search">
+                    <input type="submit" class="jpt-Search_sub">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="jpt-panel_v weui-panel weui-panel_access bor-all-clear">
+
+    <div class="weui-panel__bd">
+        <div href="javascript:void(0);" class="panel-v_item weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd panel-v_item-hd">
+                <img class="huangguan" src="/static/jpt/mblog/img/huangguan@2x.png">
+                <img class="weui-media-box__thumb" src="/static/jpt/mblog/img/home-child-3@2x.png">
+            </div>
+            <div class="weui-media-box__bd panel-v_item-bd">
+                <h4 class="weui-media-box__title"><span>1</span>班第<span>1</span>名&nbsp;&nbsp;&nbsp;小糯米</h4>
+                <a href="javascript:;" class="weui-btn bth-detail">&nbsp;</a>
+                <!--<a class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</a>-->
+            </div>
+        </div>
+        <div href="javascript:void(0);" class="panel-v_item weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd panel-v_item-hd">
+                <img class="huangguan" src="/static/jpt/mblog/img/huangguan@2x.png">
+                <img class="weui-media-box__thumb" src="/static/jpt/mblog/img/home-child-3@2x.png">
+            </div>
+            <div class="weui-media-box__bd panel-v_item-bd">
+                <h4 class="weui-media-box__title"><span>1</span>班第<span>1</span>名&nbsp;&nbsp;&nbsp;小糯米</h4>
+                <a href="javascript:;" class="weui-btn bth-detail">&nbsp;</a>
+                <!--<a class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</a>-->
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $('#bj').click(function () {
+        $('#bjbox').css('visibility','visible');
+        $('#mask').show();
+    });
+    function bjclose() {
+        $('#bjbox').css('visibility','hidden');
+        $('#mask').hide();
+    }
+</script>
+</body>
+</html>

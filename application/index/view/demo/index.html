@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Title</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<table id="table_id_example" class="display">
+    <thead>
+    <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Row 1 Data 1</td>
+        <td>Row 1 Data 2</td>
+    </tr>
+    <tr>
+        <td>Row 2 Data 1</td>
+        <td>Row 2 Data 2</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    $(document).ready( function () {
+        $('#table_id_example').DataTable({
+            autoWidth: true,
+            ajax: {
+                url: 'demo/listdata',
+                dataSrc: ''
+            },
+            columns: [
+                { data: 'create_time' ,"width": "50%"},
+                { data: 'picurl',
+
+                    "title": "图片地址"}
+            ],
+            columnDefs: [
+                {
+                "targets": -1,
+                "data": true,
+                "width": "20%",
+                "render": function ( data, type, full, meta ) {
+                    return '<img src="'+data+'"/>';
+                }
+            } ]
+
+        });
+    });
+</script>
+</body>
+</html>
+

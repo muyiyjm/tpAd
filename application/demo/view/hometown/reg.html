@@ -1,0 +1,128 @@
+{include file="hometown/head" title="首页" keywords="开源WEB开发框架" /}
+<body>
+{include file="hometown/footer" title="index" keywords="开源WEB开发框架" /}
+
+
+
+
+
+<header class="goddess-reg_header">
+    <div class="goddess-title">报名</div>
+</header>
+
+
+<form id="reg" name="reg" action="save" class="goddess-reg weui-cells weui-cells_form bor-all-clear" enctype="multipart/form-data" method="post">
+    <div class="goddess-reg_groud weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">姓名:</label></div>
+        <div class="weui-cell__bd reg-input">
+            <input class="weui-input" name="username" type="text" placeholder="">
+        </div>
+    </div>
+
+    <!--<div class="goddess-reg_groud weui-cell ">-->
+        <!--<div class="weui-cell__hd"><label class="weui-label">电话:</label></div>-->
+        <!--<div class="weui-cell__bd reg-input">-->
+            <!--<input class="weui-input" name="username" type="text" placeholder="">-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="Landlady-reg_groud-title weui-cells__title">商家介绍：</div>
+    <div class="Landlady-reg_groud weui-cell bor-all-clear">
+    <div class="weui-cell__bd reg-textarea">
+    <textarea class="weui-textarea" name="desc" placeholder="" rows="4"></textarea>
+
+    </div>
+    </div>
+
+
+
+
+
+
+    <!--<div class="goddess-reg_groud weui-cell reg-upload_pic">-->
+        <!--<div class="weui-cell__hd"><label class="weui-label">照片:</label></div>-->
+        <!--<div class="weui-cell__bd ">-->
+            <!--<div class="weui-uploader__input-box reg-pic_box">-->
+                <!--<input id="uploaderInput" name="file" class="weui-uploader__input" type="file" accept="image/*" multiple="">-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                    <p class="weui-uploader__title">照片：（最多只能上传3张）</p>
+                    <div class="weui-uploader__info">0/3</div>
+                </div>
+                <div class="weui-uploader__bd">
+                    <ul class="weui-uploader__files" id="uploaderFiles">
+                        <!--                            <li class="weui-uploader__file" style="background-image:url(./images/pic_160.png)"></li>-->
+
+                    </ul>
+                    <div class="weui-uploader__input-box">
+                        <input name="pics" id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <button type="submit" class="weui-btn bth-sub">&nbsp;提交</button>
+
+</form>
+
+
+
+
+<div class="weui-tabbar_space"></div>
+
+
+
+
+
+
+<script type="text/javascript" class="uploader js_show">
+    $(function(){
+        var tmpl = '<li class="weui-uploader__file" style="background-image:url(#url#)"></li>',
+            $gallery = $("#gallery"), $galleryImg = $("#galleryImg"),
+            $uploaderInput = $("#uploaderInput"),
+            $uploaderFiles = $("#uploaderFiles")
+        ;
+        var pics=[];
+        $uploaderInput.on("change", function(e){
+
+            var src, url = window.URL || window.webkitURL || window.mozURL, files = e.target.files;
+
+            for (var i = 0, len = files.length; i < len; ++i) {
+                var file = files[i];
+                pics.push(file);
+                console.log('files',files);
+                console.log('pics',pics);
+                if (url) {
+                    src = url.createObjectURL(file);
+                } else {
+                    src = e.target.result;
+                }
+
+                $uploaderFiles.append($(tmpl.replace('#url#', src)));
+            }
+        });
+
+        $uploaderFiles.on("click", "li", function(){
+            $galleryImg.attr("style", this.getAttribute("style"));
+            $gallery.fadeIn(100);
+        });
+        $gallery.on("click", function(){
+            $gallery.fadeOut(100);
+        });
+    });</script>
+
+</body>
+</html>

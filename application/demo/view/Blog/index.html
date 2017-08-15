@@ -1,0 +1,151 @@
+{include file="blog/header" /}
+</head>
+<body>
+<div class="page bg_rank">
+    {include file="blog/footer" /}
+<header class="jpt-header_1 jpt-header_king">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"> <img src="/static/images/jpt/banner@2x.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="weui-cell pb-0">
+        <div class="notice-hd weui-cell__hd">
+            <label class=" weui-label">公告</label>
+        </div>
+        <div class="dowebok notice-bd  weui-cell__bd">
+            <p >16级12班王雪报道</p>
+        </div>
+    </div>
+
+    <script>
+        $(".swiper-container").swiper({
+            loop: false,
+            autoplay: 3000
+        });
+
+        $(function(){
+            $('.dowebok').liMarquee();
+        });
+
+
+
+    </script>
+
+
+    <div class="jpt-Search_bar weui-flex">
+        <div class="Count-down">
+            <label>距活动结束还有：</label>
+            <ul class="Count-down_body">
+                <li> <span id="day" class="days">00</span>天</li>
+                <li> <span id="hour" class="hours">00</span>时 </li>
+                <li> <span id="mini"  class="minutes">00</span>分 </li>
+                <li> <span id="sec"  class="seconds">00</span>秒 </li>
+                <!--            <li> <span id="hm"  class="seconds">00 </span>毫秒</li>-->
+            </ul>
+        </div>
+        <div class=" jpt-Search weui-flex__item">
+            &nbsp<input placeholder="搜索姓名或编号" type="search" class="jpt-Search_input">
+            <div class="jpt-icon_search" >
+                <img src="/static/images/jpt/find1@2x.png">
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="jpt-rank weui-panel weui-panel_access">
+        <div class="weui-panel__bd jpt-rank_bd">
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/images/jpt/home-child-1@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">刘亦菲</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        编号：<span>12</span>
+                        票数：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/images/jpt/home-child-3@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">刘诗诗</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        编号：<span>1200</span>
+                        票数：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/images/jpt/home-child-2@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">山东大学</h4>
+                    <p class="weui-media-box__desc  school_desc">
+                        编号：<span>1200</span>
+                        票数：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+            <a href="javascript:void(0);" class="jpt-rank_item weui-media-box weui-media-box_appmsg">
+                <h5 class="jpt-rankNum">1</h5>
+                <div class="weui-media-box__hd jpt-rank_item-img">
+                    <img class="weui-media-box__thumb" src="/static/images/jpt/home-child-4@2x.png">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title school-name">山东大学</h4>
+                    <p class="weui-media-box__desc school_desc">
+                        编号：<span>1200</span>
+                        票数：<span>1200</span>
+                    </p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+<div class="footer-bottem">
+
+</div>
+
+
+
+</div>
+<script>
+    var zxx = {
+        obj: function(){
+            return {
+                hm: $("#hm"),
+                sec: $("#sec"),
+                mini: $("#mini"),
+                hour: $("#hour"),
+                day: $("#day"),
+                month: $("#month"),
+                year: $("#year")
+            }
+        }
+    };
+    fnTimeCountDown(1527982400000, zxx.obj());
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
